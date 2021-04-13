@@ -16,9 +16,6 @@ def random_color():
     return color
 
 
-
-
-
 def right():
     walker.fd(50)
 
