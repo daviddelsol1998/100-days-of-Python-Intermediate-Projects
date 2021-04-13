@@ -5,16 +5,6 @@ tim = Turtle()
 screen = Screen()
 screen.bgcolor("black")
 
-geometric_shapes = {
-    'triangle': 3,
-    'rectangle': 4,
-    'pentagon': 5,
-    'hexagon': 6,
-    'heptagon': 7,
-    'octagon': 8,
-    'nonagon': 9,
-    'decagon': 10
-}
 
 colors = ["red", "green", "blue", "orange", "purple", "pink", "yellow"]
 
@@ -25,10 +15,8 @@ def draw_shape(num_sides):
         tim.right(360 / num_sides)
 
 
-for shape in geometric_shapes:
+for i in range(3,10):
     tim.pencolor(random.choice(colors))
-    draw_shape(geometric_shapes[shape])
-
-
+    draw_shape(i)
 
 screen.exitonclick()
