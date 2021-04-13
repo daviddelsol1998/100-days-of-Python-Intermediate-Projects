@@ -2,6 +2,8 @@ import random
 from turtle import Turtle, Screen
 
 tim = Turtle()
+screen = Screen()
+screen.bgcolor("black")
 
 geometric_shapes = {
     'triangle': 3,
@@ -27,5 +29,6 @@ for shape in geometric_shapes:
     tim.pencolor(random.choice(colors))
     draw_shape(geometric_shapes[shape])
 
-screen = Screen()
+
+
 screen.exitonclick()
