@@ -3,7 +3,7 @@ import time
 
 # todo setup screen
 screen = Screen()
-screen.setup(width=600,height=600)
+screen.setup(width=600, height=600)
 screen.bgcolor('black')
 screen.title('Snake Game by David Del Sol using Python Turtle')
 screen.tracer(0)
@@ -20,15 +20,12 @@ for i in range(3):
     x -= 20
     snake_parts.append(new_snake_part)
 
-
-
 game_is_on = True
 
 while game_is_on:
     screen.update()
-    time.sleep(1)
+    time.sleep(0.1)
     for snake_part in snake_parts:
         snake_part.fd(20)
-
 
 screen.exitonclick()
