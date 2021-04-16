@@ -1,6 +1,7 @@
 from turtle import Turtle
 
 TOP = (0, 270)
+CENTER = (0,0)
 
 
 class Score(Turtle):
@@ -16,6 +17,10 @@ class Score(Turtle):
 
     def draw_score(self):
         self.write(f'Score : {self.score_number}', align='center', font=("Arial", 20, "normal"))
+
+    def game_over(self):
+        self.goto(CENTER)
+        self.write('GAME OVER', align='center', font=("Arial", 20, "normal"))
 
     def score_point(self):
         self.score_number += 1
