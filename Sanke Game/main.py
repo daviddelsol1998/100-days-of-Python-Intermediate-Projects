@@ -12,6 +12,13 @@ screen.tracer(0)
 # todo setup snake
 snake = Snake()
 
+# todo set up snake control
+screen.listen()
+screen.onkeypress(fun=snake.up,key='Up')
+screen.onkeypress(fun=snake.down,key='Down')
+screen.onkeypress(fun=snake.left,key='Left')
+screen.onkeypress(fun=snake.right,key='Right')
+
 
 game_is_on = True
 
