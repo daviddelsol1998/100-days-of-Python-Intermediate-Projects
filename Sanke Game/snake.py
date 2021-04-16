@@ -1,25 +1,30 @@
 from turtle import Turtle
+
 UP = 90
 DOWN = 270
 LEFT = 180
 RIGHT = 0
+
 
 class Snake:
     """this class defines the snake look and functionality"""
 
     def __init__(self):
         self.snake_parts = []
-        x = 0
+        self.x = 0
 
-        for i in range(3):
-            new_snake_part = Turtle('square')
-            new_snake_part.color('white')
-            new_snake_part.penup()
-            new_snake_part.setx(x)
-            x -= 20
-            self.snake_parts.append(new_snake_part)
+        for _ in range(3):
+            self.add_snake_part()
 
         self.head = self.snake_parts[0]
+
+    def add_snake_part(self):
+        new_snake_part = Turtle('square')
+        new_snake_part.color('white')
+        new_snake_part.penup()
+        new_snake_part.setx(self.x)
+        self.x -= 20
+        self.snake_parts.append(new_snake_part)
 
     def up(self):
         if self.head.heading() != DOWN:
