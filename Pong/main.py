@@ -18,7 +18,8 @@ left_paddle = Paddle(x=-390, y=0)
 screen.listen()
 screen.onkeypress(right_paddle.move_up, 'Up')
 screen.onkeypress(right_paddle.move_down, 'Down')
-
+screen.onkeypress(left_paddle.move_up, 'w')
+screen.onkeypress(left_paddle.move_down, 's')
 
 
 while game_is_on:
