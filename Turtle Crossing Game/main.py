@@ -10,6 +10,7 @@ screen.tracer(0)
 
 player = Player()
 score = Scoreboard()
+car = CarManager()
 
 screen.listen()
 screen.onkeypress(player.move_up, 'Up')
@@ -18,6 +19,9 @@ game_is_on = True
 while game_is_on:
     time.sleep(0.1)
     screen.update()
+
+
+    car.move()
 
     if player.ycor() == player.finish_line:
         score.update_score()
