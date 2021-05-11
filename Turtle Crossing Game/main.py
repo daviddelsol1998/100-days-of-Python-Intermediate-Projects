@@ -20,9 +20,7 @@ while game_is_on:
     time.sleep(0.1)
     screen.update()
 
-
     car.move()
 
     if player.ycor() == player.finish_line:
         score.update_score()
-
