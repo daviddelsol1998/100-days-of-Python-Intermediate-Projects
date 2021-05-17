@@ -2,6 +2,7 @@ from turtle import Turtle
 
 FONT = ("Courier", 18, "normal")
 LEVEL_POSITION = (-220, 260)
+MIDDLE = (0,0)
 
 
 class Scoreboard(Turtle):
@@ -17,4 +18,9 @@ class Scoreboard(Turtle):
         self.level += 1
         text = f'Level: {self.level}'
         self.clear()
+        self.write(text, align='center', font=FONT)
+
+    def game_over(self):
+        text = 'Game Over'
+        self.goto(MIDDLE)
         self.write(text, align='center', font=FONT)
