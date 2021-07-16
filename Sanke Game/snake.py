@@ -50,3 +50,9 @@ class Snake:
             self.snake_parts[snake_part].goto(new_x, new_y)
 
         self.head.fd(20)
+
+    def reset_snake(self):
+        for part in self.snake_parts:
+            part.goto(1000,1000)
+        self.snake_parts.clear()
+        self.__init__()

@@ -27,10 +27,9 @@ screen.onkeypress(fun=snake.right, key='Right')
 game_is_on = True
 
 
-def game_over():
-    global game_is_on
-    game_is_on = False
-    score.game_over()
+def restart_game():
+    score.reset()
+    snake.reset_snake()
 
 
 # temporal code to set score to zero
@@ -50,12 +49,12 @@ while game_is_on:
     # detect collision with walls
     if snake.head.xcor() > 280 or snake.head.xcor() < -280 \
             or snake.head.ycor() > 280 or snake.head.ycor() < -280:
-        game_over()
+        restart_game()
 
     # detect head collision
     for snake_part in snake.snake_parts[1:]:
         if snake.head.distance(snake_part) < 10:
-            game_over()
+            restart_game()
 
     snake.move()
 
