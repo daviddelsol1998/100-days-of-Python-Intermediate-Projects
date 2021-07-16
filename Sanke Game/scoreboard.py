@@ -1,4 +1,5 @@
-from turtle import Turtle
+from os import read
+from turtle import Turtle, mode
 
 TOP = (0, 270)
 CENTER = (0,0)
@@ -8,13 +9,18 @@ class Score(Turtle):
     def __init__(self):
         super().__init__()
         self.score_number = 0
-        self.high_score = 0
+        self.high_score = self.read_high_score()
         self.hideturtle()
         self.speed('fastest')
         self.color('white')
         self.penup()
         self.goto(TOP)
         self.draw_score()
+
+    def read_high_score(self):
+        with read('high_score.txt', mode='r') as high_score_file:
+            high_score = high_score_file.read()
+            return int(high_score)
 
     def draw_score(self):
         self.clear()
