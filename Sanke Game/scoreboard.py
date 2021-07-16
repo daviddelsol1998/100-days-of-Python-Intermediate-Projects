@@ -18,9 +18,14 @@ class Score(Turtle):
         self.draw_score()
 
     def read_high_score(self):
-        with read('high_score.txt', mode='r') as high_score_file:
+        with open('high_score.txt', mode='r') as high_score_file:
             high_score = high_score_file.read()
             return int(high_score)
+
+    def write_high_score(self):
+        new_score = self.score_number
+        with open('high_score.txt', mode='w') as high_score_file:
+            high_score_file.write(str(new_score))
 
     def draw_score(self):
         self.clear()
@@ -31,9 +36,10 @@ class Score(Turtle):
     #     self.write('GAME OVER', align='center', font=("Arial", 20, "normal"))
 
     def reset(self):
+        self.clear()
         if self.score_number > self.high_score:
-            self.high_score = self.score_number
-        self.score_number = 0
+            self.write_high_score()
+        self.__init__()
 
     def score_point(self):
         self.score_number += 1

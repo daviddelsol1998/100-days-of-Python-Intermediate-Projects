@@ -30,6 +30,7 @@ game_is_on = True
 def restart_game():
     score.reset()
     snake.reset_snake()
+    
 
 
 # temporal code to set score to zero
