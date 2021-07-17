@@ -2,7 +2,7 @@ from os import read
 from turtle import Turtle, mode
 
 TOP = (0, 270)
-CENTER = (0,0)
+CENTER = (0, 0)
 
 
 class Score(Turtle):
@@ -29,14 +29,15 @@ class Score(Turtle):
 
     def draw_score(self):
         self.clear()
-        self.write(f'Score:{self.score_number} - High Score:{self.high_score}', align='center', font=("Arial", 20, "normal"))
+        self.write(f'Score:{self.score_number} - High Score:{self.high_score}',
+                   align='center', font=("Arial", 20, "normal"))
 
     # def game_over(self):
     #     self.goto(CENTER)
     #     self.write('GAME OVER', align='center', font=("Arial", 20, "normal"))
 
     def reset(self):
-        self.clear()
+        self.clear()  # clears turtle score from screen
         if self.score_number > self.high_score:
             self.write_high_score()
         self.__init__()

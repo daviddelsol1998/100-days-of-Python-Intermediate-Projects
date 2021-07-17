@@ -15,10 +15,9 @@ screen.tracer(0)
 snake = Snake()
 food = Food()
 score = Score()
-print(f'score at the beginning {score.score_number}')
 
 # todo set up snake control
-screen.listen()
+screen.listen()  # listen method takes in keyboard inputs and call functions
 screen.onkeypress(fun=snake.up, key='Up')
 screen.onkeypress(fun=snake.down, key='Down')
 screen.onkeypress(fun=snake.left, key='Left')
@@ -26,23 +25,24 @@ screen.onkeypress(fun=snake.right, key='Right')
 
 game_is_on = True
 
+# functionality added to reset game keeping highest
+
 
 def restart_game():
-    score.reset()
-    snake.reset_snake()
-    
+    score.reset()  # clears turtle score from screen and writes new one
+    snake.reset_snake()  # deletes previous snake and creates new one
 
 
 # temporal code to set score to zero
 score.score_number -= 1
 
 while game_is_on:
-    screen.update()
+    screen.update()  # screen refresh
     time.sleep(0.1)
 
     # detect collision with food
     if snake.head.distance(food) < 15:
-        food.refresh()
+        food.refresh()  # changes the position for the next food
 
         score.score_point()
         snake.add_snake_part()
@@ -57,6 +57,6 @@ while game_is_on:
         if snake.head.distance(snake_part) < 10:
             restart_game()
 
-    snake.move()
+    snake.move()  # this moves the snake forward
 
 screen.exitonclick()

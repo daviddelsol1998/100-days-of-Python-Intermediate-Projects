@@ -11,7 +11,7 @@ class Snake:
 
     def __init__(self):
         self.snake_parts = []
-        self.x = 0
+        self.x = 0  # x position of the turtle(snake in the game)
 
         for _ in range(3):
             self.add_snake_part()
@@ -28,6 +28,7 @@ class Snake:
 
     def up(self):
         if self.head.heading() != DOWN:
+            # set heading of the turtle module up/down and so forth
             self.head.seth(UP)
 
     def down(self):
@@ -53,6 +54,6 @@ class Snake:
 
     def reset_snake(self):
         for part in self.snake_parts:
-            part.goto(1000,1000)
+            part.goto(1000, 1000)
         self.snake_parts.clear()
         self.__init__()
