@@ -1,20 +1,19 @@
-# TODO: Create a letter using starting_letter.txt
+# open the starting letter file
 with open('../Mail Merging/Input/Letters/starting_letter.txt', 'r') as starting_letter:
-    # reads content as a string from starting letter to be modified latter
+    # read content as a string from starting letter to be modified latter
     letter_content = starting_letter.read()
-    # for each name in invited_names.txt
+    #open the invited names file
     with open('./Input/Names/invited_names.txt', 'r') as invited_names:
         # reads each line of content into a list to iterate through each name
         names = invited_names.readlines()
+        # for each name in invited_names.txt
         for name in names:
             invitee = name.strip()  # removes spaces from each name for formatting
-            # Save the letters in the folder "ReadyToSend".
-            # creates new file per invitee
+            # creates new file per invitee by opening (Save the letters in the folder "ReadyToSend".)
             with open(f'../Mail Merging/Output/ReadyToSend/letter_to_{invitee}', 'w') as new_letter:
                 # Replace the [name] placeholder with the actual name.
-                # replaces invite name each time.
                 new_letter_content = letter_content.replace('[name]', invitee)
-                new_letter.write(new_letter_content)  # writes new content
+                new_letter.write(new_letter_content)  # writes new content in each letter
 
 
 # useful hints for file writting and transformation.
