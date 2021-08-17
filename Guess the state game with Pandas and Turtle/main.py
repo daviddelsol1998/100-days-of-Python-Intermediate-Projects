@@ -1,4 +1,4 @@
-#import libraries
+# import libraries
 import turtle
 import pandas
 
@@ -13,7 +13,6 @@ screen = turtle.Screen()
 screen.title('Guess all the States game (Turtle and Pandas project)')
 screen.setup(730, 495)
 screen.bgpic('blank_states_img.gif')
-
 
 # play the game until all 50 states have been guessed
 while len(states_guessed) < 50:
@@ -59,4 +58,3 @@ while len(states_guessed) < 50:
 
 # keep screen open until the user closes the program
 screen.mainloop()
-
